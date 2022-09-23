@@ -1,21 +1,32 @@
 #include <iostream>
 using namespace std;
-unsigned long int fact(int);
+
+unsigned long long comb(int n, int r);
+
 int main()
 {
-    int n,r;
-    cin >> n >>r;
-    int c=fact(n);
-    cout<<c;
+    int n, r;
+    cin >> n >> r;
+    cout << comb(n, r);
 }
-unsigned long int fact(int n)
+
+unsigned long long comb(int n, int r)
 {
-    static unsigned long long int f = 1;
-    cout<<"f is "<<f<<endl;
-    if (n == 1 || n == 0)
+    if (n < r)
     {
-        return f;
+        return 0;
     }
-    f*=n;
-    return fact(n - 1);
+    if (r == 0)
+    {
+        return 1;
+    }
+    if (r == 1)
+    {
+        return n;
+    }
+    if (n == 1)
+    {
+        return 1;
+    }
+    return comb(n - 1, r - 1) + comb(n - 1, r);
 }

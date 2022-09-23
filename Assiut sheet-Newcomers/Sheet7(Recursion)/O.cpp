@@ -11,12 +11,10 @@ int main()
 }
 unsigned int fib(int b)
 {
-    int f = 0;
     if (b == 1)
         return 0;
     else if (b == 2)
         return 1;
         // cout<<"calling fib("<<b-1<<")+fib("<<b-2<<")"<<endl;
-    f = fib(b - 1) + fib(b - 2);
-    return f;
+    return fib(b - 1) + fib(b - 2);
 }
